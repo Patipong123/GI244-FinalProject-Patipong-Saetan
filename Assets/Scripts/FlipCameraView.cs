@@ -28,6 +28,6 @@ public class FlipCameraView : MonoBehaviour
     void FlipCamera()
     {
         Camera.main.transform.Rotate(0f, 0f, 180f);
-        Debug.Log("Camera flipped! test");
+        Debug.Log("Camera flipped!");
     }
 }
