@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
 
     private bool isImmortal = false;
 
+    public GameOverUI gameOverUI;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -82,17 +84,19 @@ public class PlayerController : MonoBehaviour
     {
         if (isImmortal)
         {
-            Debug.Log("Immortal active - no death.");
+            
             return;
         }
 
-        Debug.Log("Game Over");
+       
         isGameOver = true;
         playerAnim.SetBool("Death_b", true);
         playerAudio.Stop();
         playerAudio.PlayOneShot(deathSfx);
         dirt.Stop();
         explosion.Play();
+
+        gameOverUI.ShowGameOver();
     }
 
    

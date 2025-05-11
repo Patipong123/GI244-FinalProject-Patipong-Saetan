@@ -40,7 +40,7 @@ public class Immortal : MonoBehaviour
 
     IEnumerator ImmortalRoutine()
     {
-        Debug.Log(">>> Immortal START");
+        
 
         playerController.SetImmortal(true);
         energyController.decreaseRate = 0f;
@@ -60,6 +60,6 @@ public class Immortal : MonoBehaviour
             immortalUIText.SetActive(false);
         }
 
-        Debug.Log("<<< Immortal END");
+        
     }
 }
