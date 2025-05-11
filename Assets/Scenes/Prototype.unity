@@ -285,7 +285,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1183671265}
-  takePoint: {fileID: 1667492346595872711}
   player: {fileID: 1667492346595872697}
 --- !u!4 &132895512
 Transform:

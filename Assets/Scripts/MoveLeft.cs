@@ -11,6 +11,7 @@ public class MoveLeft : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<PlayerController>();
+
     }
 
     void Update()

@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem dirt;
     public ParticleSystem explosion;
 
+    private EnegyController energyController;
+    private Immortal immortal;
+
     private bool isImmortal = false;
 
     void Awake()
@@ -32,6 +35,9 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        energyController = FindAnyObjectByType<EnegyController>();
+        immortal = FindAnyObjectByType<Immortal>();
+
         Physics.gravity *= gravityMultiplier;
         isGameOver = false;
         playerAnim.SetFloat("Speed_f", 1.0f);
@@ -96,13 +102,13 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("Enegy"))
         {
             FindAnyObjectByType<EnegyController>().AddEnergy(20f);
-            Destroy(collision.gameObject);
+            ObjectPooling.GetInstance().ReturnToEnegyPool(collision.gameObject);
         }
 
         if (collision.CompareTag("Immortal"))
         {
             FindAnyObjectByType<Immortal>().ActivateImmortal();
-            Destroy(collision.gameObject);
+            ObjectPooling.GetInstance().ReturnToImmortalPool(collision.gameObject);
         }
     }
 
