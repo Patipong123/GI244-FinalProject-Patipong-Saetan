@@ -1,41 +1,32 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 public class TakePoint : MonoBehaviour
 {
+    public ScoreManager scoreManager;
     public TextMeshProUGUI scoreText;
-    private int score = 0;
+    
     
 
     void Start()
     {
-        UpdateScoreText();
-    }
-
-    
-    void Update()
-    {
-        
+        scoreManager.ResetScore();
     }
 
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("TakePoint"))
         {
-            score += 1;
-            UpdateScoreText();
+            scoreManager.AddScore(1);
         }
         
     }
 
-    private void UpdateScoreText()
-    {
-        scoreText.text = "Score : " + score.ToString();
-    }
 
     public int GetScore()
     {
-        return score;
+        return scoreManager != null ? scoreManager.GetCurrentScore() : 0;
     }
 }

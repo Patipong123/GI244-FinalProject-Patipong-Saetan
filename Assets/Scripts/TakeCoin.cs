@@ -4,35 +4,22 @@ using TMPro;
 
 public class TakeCoin : MonoBehaviour
 {
-    public TextMeshProUGUI coinText;
-    private int coin = 0;
-
-
+    public ScoreManager scoreManager;
+    
     void Start()
     {
-        UpdateCoinText();
-    }
-
-
-    void Update()
-    {
-
+        if (scoreManager == null)
+            scoreManager = FindAnyObjectByType<ScoreManager>();
     }
 
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Coin"))
         {
-            
-            coin += 1;
-            UpdateCoinText();
+            scoreManager.AddCoin(1);
             ObjectPooling.GetInstance().ReturnToCoinPool(other.gameObject);
         }
 
     }
 
-    private void UpdateCoinText()
-    {
-        coinText.text = ": " + coin.ToString();
-    }
 }

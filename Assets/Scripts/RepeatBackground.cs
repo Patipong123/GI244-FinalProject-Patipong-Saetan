@@ -15,7 +15,7 @@ public class RepeatBackground : MonoBehaviour
         startPos = transform.position;
         width = GetComponent<Renderer>().bounds.size.x;
 
-        player = GameObject.Find("Player").GetComponent<PlayerController>();
+        player = FindAnyObjectByType<PlayerController>();
     }
 
     void Update()

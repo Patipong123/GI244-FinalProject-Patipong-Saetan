@@ -32,7 +32,7 @@ public class EnegyController : MonoBehaviour
 
             if (currentEnergy <= 0f)
             {
-                Debug.Log("Energy depleted! Game Over.");
+                
                 playerController.GameOver();
             }
         }
