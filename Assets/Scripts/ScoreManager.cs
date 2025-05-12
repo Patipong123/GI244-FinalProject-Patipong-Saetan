@@ -13,6 +13,7 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
+        
         highScore = PlayerPrefs.GetInt("HighScore", 0);
         coin = PlayerPrefs.GetInt("Coin", 0); 
 
@@ -56,4 +57,20 @@ public class ScoreManager : MonoBehaviour
     {
         return currentScore;
     }
+
+
+    //fuction for reset all data
+    public void ResetAllData()
+    {
+        currentScore = 0;
+        highScore = 0;
+        coin = 0;
+
+        PlayerPrefs.DeleteKey("HighScore");
+        PlayerPrefs.DeleteKey("Coin");
+
+        UpdateUI();
+    }
 }
+
+
