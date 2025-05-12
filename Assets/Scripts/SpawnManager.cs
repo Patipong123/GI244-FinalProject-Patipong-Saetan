@@ -48,8 +48,8 @@ public class SpawnManager : MonoBehaviour
 
             if (Random.value < 0.2f)
             {
-                Vector3 platformPosition = spawnPoint.position + new Vector3(7f, 1f, 0f);
-                Quaternion platformRotation = Quaternion.Euler(0f, 0f, 15f);
+                Vector3 platformPosition = spawnPoint.position + new Vector3(9f, 2.5f, 0f);
+                Quaternion platformRotation = Quaternion.Euler(0f, 0f, 0f);
                 ObjectPooling.GetInstance().AcquirePlatform(platformPosition, platformRotation);
 
             }

@@ -2007,7 +2007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31192d562b76d5e44b8bf65f2143bb26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  takePoint: {fileID: 0}
+  takePoint: {fileID: 1667492346595872711}
 --- !u!4 &1298527436
 Transform:
   m_ObjectHideFlags: 0
